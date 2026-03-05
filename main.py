@@ -6,20 +6,31 @@ This is a basic structure to get you started. Modify it for your project!
 """
 
 def display_menu():
-    """
-    Show the main menu to the user.
-    Customize this for your application.
-    """
-    print("\n" + "="*40)
-    print("  My Console Application")
-    print("="*40)
-    print("1. Do something")
-    print("2. Do something else")
-    print("3. Show information")
-    print("help - Show this menu")
-    print("quit - Exit application")
-    print()
+    print("\n")
+    print("=" * 65)
 
+    print(r"""
+   ██████╗ ██╗   ██╗██╗███████╗
+  ██╔═══██╗██║   ██║██║╚══███╔╝
+  ██║   ██║██║   ██║██║  ███╔╝
+  ██║▄▄ ██║██║   ██║██║ ███╔╝
+  ╚██████╔╝╚██████╔╝██║███████╗
+   ╚══▀▀═╝╚═╝╚═════╝ ╚═╝╚══════╝
+""")
+
+    print("  The perfect python quiz for nerds")
+    print("=" * 65)
+
+    print("\nChoose your challenge:\n")
+
+    print("  1) ⚔️  Lord of the Rings Quiz")
+    print("  2) 🔥  Dark Souls Quiz")
+    print("  3) 📜  Lore Mode (stretch goal)")
+    print()
+    print("  help  - Show menu")
+    print("  quit  - Exit the quiz")
+
+    print("\n" + "=" * 65)
 
 def handle_choice(choice):
     """
