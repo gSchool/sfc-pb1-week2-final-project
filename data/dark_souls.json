@@ -1,0 +1,417 @@
+{
+  "title": "Dark Souls",
+  "facts": {
+    "chosen_undead_goal": "Link the Fire",
+    "firelink_shrine_location": "Firelink Shrine",
+    "primary_antagonist": "Gwyn, Lord of Cinder",
+    "first_bell_location": "Undead Parish",
+    "second_bell_location": "Quelaag's Domain",
+    "lordvessel_obtained_from": "Gwynevere",
+    "main_hub_npc": "Anastacia of Astora",
+    "blacksmith_anor_londo": "Giant Blacksmith",
+    "blacksmith_undead_parish": "Andre of Astora"
+  },
+  "quiz_facts": [
+    {
+      "key": "primary_antagonist",
+      "prompt": "Who is the primary antagonist?",
+      "wrong_pool": "names"
+    },
+    {
+      "key": "firelink_shrine_location",
+      "prompt": "What is the main hub location?",
+      "wrong_pool": "names"
+    },
+    {
+      "key": "blacksmith_undead_parish",
+      "prompt": "Who is the blacksmith in Undead Parish?",
+      "wrong_pool": "names"
+    },
+    {
+      "key": "blacksmith_anor_londo",
+      "prompt": "Who is the blacksmith in Anor Londo?",
+      "wrong_pool": "names"
+    }
+  ],
+  "entries": [
+    {
+      "id": "chosen_undead",
+      "name": "Chosen Undead",
+      "type": "Character",
+      "race": "Undead",
+      "aliases": ["Undead Champion"],
+      "faction": "Independent",
+      "description": "The player character who journeys through Lordran, defeats powerful beings, and determines the fate of the Age of Fire."
+    },
+    {
+      "id": "gwyn",
+      "name": "Gwyn, Lord of Cinder",
+      "type": "Character",
+      "race": "Lord",
+      "aliases": ["Lord of Sunlight"],
+      "faction": "Anor Londo",
+      "description": "A lord who kindled the First Flame, extending the Age of Fire at great cost."
+    },
+    {
+      "id": "first_flame",
+      "name": "First Flame",
+      "type": "Concept",
+      "aliases": ["The Flame"],
+      "faction": "Age of Fire",
+      "description": "The primordial fire that ushered in the Age of Fire; it fades over time, threatening the world with Dark."
+    },
+    {
+      "id": "link_the_fire",
+      "name": "Link the Fire",
+      "type": "Event",
+      "aliases": ["Kindle the Flame"],
+      "faction": "Age of Fire",
+      "description": "An act of sacrifice to rekindle the First Flame and prolong the Age of Fire.",
+      "requires": ["Lordvessel"]
+    },
+    {
+      "id": "firelink_shrine",
+      "name": "Firelink Shrine",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Lordran",
+      "description": "A central hub in Lordran where the Chosen Undead meets allies, kindles bonfires, and begins their journey."
+    },
+    {
+      "id": "anor_londo",
+      "name": "Anor Londo",
+      "type": "Location",
+      "aliases": ["City of the Gods"],
+      "faction": "Anor Londo",
+      "description": "A grand, radiant city associated with the gods and the legacy of Gwyn."
+    },
+    {
+      "id": "undead_burg",
+      "name": "Undead Burg",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Lordran",
+      "description": "A ruined settlement crawling with hollows, often an early path for the Chosen Undead."
+    },
+    {
+      "id": "undead_parish",
+      "name": "Undead Parish",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Lordran",
+      "description": "An area above Undead Burg known for the Bell of Awakening and a prominent blacksmith."
+    },
+    {
+      "id": "blighttown",
+      "name": "Blighttown",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Lordran",
+      "description": "A toxic, decaying shantytown that descends into the depths and disease of Lordran."
+    },
+    {
+      "id": "quelaags_domain",
+      "name": "Quelaag's Domain",
+      "type": "Location",
+      "aliases": ["Daughter of Chaos' Lair"],
+      "faction": "Chaos",
+      "description": "A lair beyond Blighttown where a Bell of Awakening can be rung after a deadly encounter."
+    },
+    {
+      "id": "sen_fortress",
+      "name": "Sen's Fortress",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Anor Londo",
+      "description": "A deadly fortress of traps and guardians that tests those seeking the path to Anor Londo."
+    },
+    {
+      "id": "kiln_first_flame",
+      "name": "Kiln of the First Flame",
+      "type": "Location",
+      "aliases": ["The Kiln"],
+      "faction": "Age of Fire",
+      "description": "A desolate place tied to the First Flame, where the final confrontation to determine the world’s fate occurs."
+    },
+
+    {
+      "id": "bonfire",
+      "name": "Bonfire",
+      "type": "Mechanic",
+      "aliases": [],
+      "faction": "Lordran",
+      "description": "Rest points that offer safety and recovery but also restore many enemies when used."
+    },
+    {
+      "id": "estus_flask",
+      "name": "Estus Flask",
+      "type": "Item",
+      "aliases": ["Estus"],
+      "faction": "Lordran",
+      "description": "A healing flask replenished at bonfires, associated with the warmth of the fire."
+    },
+
+    {
+      "id": "lordvessel",
+      "name": "Lordvessel",
+      "type": "Artifact",
+      "aliases": [],
+      "faction": "Anor Londo",
+      "description": "A great vessel used to open the way to powerful Lords by filling it with their souls.",
+      "obtained_from": "Gwynevere",
+      "required_for": ["Link the Fire"]
+    },
+    {
+      "id": "lord_soul",
+      "name": "Lord Soul",
+      "type": "Concept",
+      "aliases": [],
+      "faction": "Age of Fire",
+      "description": "Immense souls discovered near the First Flame, wielded by ancient beings to shape the world."
+    },
+
+    {
+      "id": "andre_of_astora",
+      "name": "Andre of Astora",
+      "type": "Character",
+      "race": "Human",
+      "aliases": ["Blacksmith Andre"],
+      "faction": "Undead Parish",
+      "description": "A steadfast blacksmith in Undead Parish known for weapon reinforcement and craftsmanship.",
+      "role": "Blacksmith"
+    },
+    {
+      "id": "giant_blacksmith",
+      "name": "Giant Blacksmith",
+      "type": "Character",
+      "race": "Giant",
+      "aliases": ["Blacksmith of Anor Londo"],
+      "faction": "Anor Londo",
+      "description": "A giant blacksmith who forges and modifies weapons in Anor Londo.",
+      "role": "Blacksmith"
+    },
+    {
+      "id": "anastacia_of_astora",
+      "name": "Anastacia of Astora",
+      "type": "Character",
+      "race": "Human",
+      "aliases": ["Fire Keeper"],
+      "faction": "Firelink Shrine",
+      "description": "A Fire Keeper who tends the bonfire at Firelink Shrine and enables leveling through her power.",
+      "role": "Fire Keeper"
+    },
+    {
+      "id": "oscar_of_astora",
+      "name": "Oscar of Astora",
+      "type": "Character",
+      "race": "Human",
+      "aliases": [],
+      "faction": "Undead Asylum",
+      "description": "A knight encountered early who sets the Chosen Undead on a path toward prophecy and purpose."
+    },
+    {
+      "id": "solaire",
+      "name": "Solaire of Astora",
+      "type": "Character",
+      "race": "Human",
+      "aliases": ["Warrior of Sunlight"],
+      "faction": "Warriors of Sunlight",
+      "description": "A jolly knight devoted to the sun, known for his hopeful attitude and co-op summoning.",
+      "catchphrase": "Praise the Sun!"
+    },
+    {
+      "id": "siegmeyer",
+      "name": "Siegmeyer of Catarina",
+      "type": "Character",
+      "race": "Human",
+      "aliases": ["Knight of Catarina"],
+      "faction": "Catarina",
+      "description": "A friendly knight often found pondering obstacles, known for his round armor."
+    },
+    {
+      "id": "lautrec",
+      "name": "Knight Lautrec of Carim",
+      "type": "Character",
+      "race": "Human",
+      "aliases": [],
+      "faction": "Carim",
+      "description": "A knight with a dangerous reputation, whose actions can greatly affect Firelink Shrine."
+    },
+    {
+      "id": "crestfallen_warrior",
+      "name": "Crestfallen Warrior",
+      "type": "Character",
+      "race": "Undead",
+      "aliases": [],
+      "faction": "Firelink Shrine",
+      "description": "An undead at Firelink Shrine who offers bleak commentary and guidance."
+    },
+    {
+      "id": "frampt",
+      "name": "Kingseeker Frampt",
+      "type": "Character",
+      "race": "Primordial Serpent",
+      "aliases": ["Frampt"],
+      "faction": "Age of Fire",
+      "description": "A primordial serpent who urges the Chosen Undead to place the Lordvessel and link the fire.",
+      "guides_toward": ["Link the Fire"]
+    },
+    {
+      "id": "kaathe",
+      "name": "Darkstalker Kaathe",
+      "type": "Character",
+      "race": "Primordial Serpent",
+      "aliases": ["Kaathe"],
+      "faction": "Age of Dark",
+      "description": "A primordial serpent who supports the rise of Dark and an alternative to linking the fire."
+    },
+
+    {
+      "id": "bell_of_awakening",
+      "name": "Bell of Awakening",
+      "type": "Artifact",
+      "aliases": ["Bells of Awakening"],
+      "faction": "Lordran",
+      "description": "Great bells that, when rung, set major events in motion and open the way forward.",
+      "locations": ["Undead Parish", "Quelaag's Domain"]
+    },
+
+    {
+      "id": "asylum_demon",
+      "name": "Asylum Demon",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "Undead Asylum",
+      "description": "A massive demon encountered in the Undead Asylum, often one of the first major trials."
+    },
+    {
+      "id": "taurus_demon",
+      "name": "Taurus Demon",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "Undead Burg",
+      "description": "A towering demon fought on a battlement in Undead Burg."
+    },
+    {
+      "id": "bell_gargoyles",
+      "name": "Bell Gargoyles",
+      "type": "Boss",
+      "aliases": ["Gargoyles"],
+      "faction": "Undead Parish",
+      "description": "Stone guardians fought near the first Bell of Awakening."
+    },
+    {
+      "id": "capra_demon",
+      "name": "Capra Demon",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "Lower Undead Burg",
+      "description": "A fast, brutal demon fought in a cramped arena."
+    },
+    {
+      "id": "gap_dragon",
+      "name": "Gaping Dragon",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "The Depths",
+      "description": "A grotesque dragon-like creature encountered in the Depths."
+    },
+    {
+      "id": "quelaag",
+      "name": "Chaos Witch Quelaag",
+      "type": "Boss",
+      "aliases": ["Quelaag"],
+      "faction": "Chaos",
+      "description": "A powerful being guarding the second Bell of Awakening in Quelaag's Domain."
+    },
+    {
+      "id": "iron_golem",
+      "name": "Iron Golem",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "Sen's Fortress",
+      "description": "A giant guardian fought atop Sen’s Fortress, blocking access to Anor Londo."
+    },
+    {
+      "id": "ornstein_smough",
+      "name": "Ornstein and Smough",
+      "type": "Boss",
+      "aliases": ["Dragonslayer Ornstein", "Executioner Smough"],
+      "faction": "Anor Londo",
+      "description": "A deadly duo fought in Anor Londo; their defeat is a major turning point."
+    },
+    {
+      "id": "seath",
+      "name": "Seath the Scaleless",
+      "type": "Boss",
+      "aliases": ["Seath"],
+      "faction": "Duke's Archives",
+      "description": "A pale dragon who sought immortality, associated with sorcery and twisted experiments."
+    },
+    {
+      "id": "bed_of_chaos",
+      "name": "Bed of Chaos",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "Lost Izalith",
+      "description": "A chaotic entity born from the attempted recreation of the First Flame."
+    },
+    {
+      "id": "nito",
+      "name": "Gravelord Nito",
+      "type": "Boss",
+      "aliases": ["Nito"],
+      "faction": "Tomb of the Giants",
+      "description": "A Lord of Death associated with disease, decay, and the dead."
+    },
+    {
+      "id": "four_kings",
+      "name": "Four Kings",
+      "type": "Boss",
+      "aliases": [],
+      "faction": "New Londo Ruins",
+      "description": "A group of powerful beings tied to the Abyss and the fate of New Londo."
+    },
+    {
+      "id": "gwyn_boss",
+      "name": "Gwyn (Boss Encounter)",
+      "type": "Boss",
+      "aliases": ["Lord of Cinder"],
+      "faction": "Kiln of the First Flame",
+      "description": "The final confrontation in the Kiln of the First Flame against Gwyn, Lord of Cinder."
+    },
+
+    {
+      "id": "warriors_of_sunlight",
+      "name": "Warriors of Sunlight",
+      "type": "Group",
+      "aliases": ["Sunlight Covenant"],
+      "faction": "Lordran",
+      "description": "A covenant associated with the sun and cooperation; Solaire is closely tied to it."
+    },
+    {
+      "id": "chaos",
+      "name": "Chaos",
+      "type": "Concept",
+      "aliases": [],
+      "faction": "Chaos",
+      "description": "A force born from the failed attempt to recreate the First Flame, tied to demons and Lost Izalith."
+    },
+    {
+      "id": "age_of_fire",
+      "name": "Age of Fire",
+      "type": "Concept",
+      "aliases": [],
+      "faction": "Age of Fire",
+      "description": "An era defined by the power of the First Flame and the rule of the gods."
+    },
+    {
+      "id": "age_of_dark",
+      "name": "Age of Dark",
+      "type": "Concept",
+      "aliases": [],
+      "faction": "Age of Dark",
+      "description": "An era associated with the fading of the First Flame and the rise of Dark."
+    }
+  ]
+}

@@ -32,6 +32,7 @@ def display_menu():
 
     print("\n" + "=" * 65)
 
+    print("\n" + "=" * 65)
 
 def handle_choice(choice):
     """
