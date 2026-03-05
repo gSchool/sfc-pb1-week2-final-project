@@ -20,7 +20,7 @@ def display_menu():
   ╚██████╔╝╚██████╔╝██║███████╗
    ╚══▀▀═╝╚═╝╚═════╝ ╚═╝╚══════╝
 """)
-    print("    The Perfect Python Quiz for NERDS")
+    print("    The Perfect Python Quiz for Fans")
     print("=" * 65)
     print("\nChoose your challenge:\n")
     print("  1) ⚔️  The One Ring Trial  — Lord of the Rings")

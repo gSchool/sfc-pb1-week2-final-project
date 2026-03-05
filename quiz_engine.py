@@ -15,7 +15,12 @@ def run_quiz(lore_file_path):
     score = 0
     for number, question in enumerate(questions, start=1):
         print(f"\nQuestion {number}:")
-        if ask_question(question):
+        result = ask_question(question)
+
+        if result is None:
+            print("\nExiting Quiz early...")
+            break
+        if result:
             score += 1
 
     print(f"\nYou got {score} correct out of {len(questions)} questions!")
@@ -60,10 +65,15 @@ def ask_question(question):
         print(f"  {labels[i]}) {choice}")
 
     while True:
-        raw = input(f"\nYour choice ({'/'.join(labels[:len(choices)])}): ").strip().upper()
+        raw = input(f"\nYour choice ({'/'.join(labels[:len(choices)])}): or 'quit' ").strip()
+
+        if raw.lower() in ("quit","q", "exit"):
+            return None
+        
+        raw = raw.upper()
 
         if raw not in labels[:len(choices)]:
-            print(f"Please choose one of: {', '.join(labels[:len(choices)])}")
+            print(f"Please choose one of: {', '.join(labels[:len(choices)])} (or type 'quit')")
             continue
 
         picked_index = labels.index(raw)
