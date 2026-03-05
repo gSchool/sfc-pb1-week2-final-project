@@ -1,0 +1,178 @@
+{
+  "title": "Lord of the Rings",
+  "facts": {
+    "one_ring_destroyer": "Frodo Baggins",
+    "one_ring_destroy_location": "Mount Doom",
+    "gandalf_horse": "Shadowfax",
+    "aragorn_reforged_sword": "Andúril",
+    "gandalf_orthanc_escape_help": "Great Eagles"
+  },
+  "entries": [
+    {
+      "id": "the_one_ring",
+      "name": "The One Ring",
+      "type": "Artifact",
+      "aliases": ["Ruling Ring"],
+      "faction": "Mordor",
+      "description": "A powerful ring forged by Sauron to dominate the other Rings of Power.",
+      "created_by": "Sauron"
+    },
+    {
+      "id": "sauron",
+      "name": "Sauron",
+      "type": "Character",
+      "aliases": ["Dark Lord"],
+      "faction": "Mordor",
+      "description": "The Dark Lord who forged the One Ring to dominate Middle-earth.",
+      "notable_creations": ["The One Ring"]
+    },
+    {
+      "id": "frodo_baggins",
+      "name": "Frodo Baggins",
+      "type": "Character",
+      "race": "Hobbit",
+      "aliases": ["Ring-bearer"],
+      "faction": "Shire / Fellowship of the Ring",
+      "description": "A Hobbit tasked with bringing the One Ring to Mount Doom in Mordor to be destroyed.",
+      "companions": ["Samwise Gamgee"],
+      "notable_actions": ["Destroyed the One Ring (quiz version)"]
+    },
+    {
+      "id": "samwise_gamgee",
+      "name": "Samwise Gamgee",
+      "type": "Character",
+      "race": "Hobbit",
+      "aliases": ["Sam"],
+      "faction": "Shire / Fellowship of the Ring",
+      "description": "Frodo’s loyal friend who travels with him toward Mordor and supports him throughout the quest.",
+      "companions": ["Frodo Baggins"]
+    },
+    {
+      "id": "legolas",
+      "name": "Legolas",
+      "type": "Character",
+      "race": "Elf",
+      "aliases": ["Legolas Greenleaf"],
+      "faction": "Elves of Mirkwood / Fellowship of the Ring",
+      "description": "An Elven prince and skilled archer who joins the Fellowship."
+    },
+    {
+      "id": "gandalf",
+      "name": "Gandalf",
+      "type": "Character",
+      "race": "Maia (Wizard / Istari)",
+      "aliases": ["Mithrandir", "Gandalf the Grey", "Gandalf the White"],
+      "faction": "Istari / Fellowship of the Ring",
+      "description": "A wizard who helps unite the Free Peoples against Sauron.",
+      "mounts": ["Shadowfax"],
+      "escaped_from": ["Orthanc"],
+      "helped_by": ["Great Eagles"]
+    },
+    {
+      "id": "shadowfax",
+      "name": "Shadowfax",
+      "type": "Creature",
+      "race": "Horse",
+      "aliases": [],
+      "faction": "Rohan",
+      "description": "The famous horse ridden by Gandalf, known as the lord of horses.",
+      "rider": "Gandalf"
+    },
+    {
+      "id": "aragorn",
+      "name": "Aragorn",
+      "type": "Character",
+      "race": "Human",
+      "aliases": ["Strider", "Elessar", "Heir of Isildur"],
+      "faction": "Dúnedain / Fellowship of the Ring / Gondor",
+      "description": "A Ranger of the North who becomes king and wields a reforged blade.",
+      "weapons": ["Andúril"]
+    },
+    {
+      "id": "anduril",
+      "name": "Andúril",
+      "type": "Artifact",
+      "aliases": ["Flame of the West"],
+      "faction": "Gondor",
+      "description": "Aragorn’s sword that was reforged from the shards of Narsil.",
+      "wielder": "Aragorn",
+      "reforged_from": "Narsil"
+    },
+    {
+      "id": "gollum",
+      "name": "Gollum",
+      "type": "Character",
+      "race": "Stoor Hobbit (corrupted)",
+      "aliases": ["Sméagol"],
+      "faction": "Independent",
+      "description": "A corrupted creature obsessed with the One Ring, often calling it 'My precious'.",
+      "catchphrase": "My precious"
+    },
+    {
+      "id": "mount_doom",
+      "name": "Mount Doom",
+      "type": "Location",
+      "aliases": ["Orodruin"],
+      "faction": "Mordor",
+      "description": "The volcano in Mordor where the One Ring can be destroyed."
+    },
+    {
+      "id": "the_shire",
+      "name": "The Shire",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Hobbits of the Shire",
+      "description": "A peaceful region in the northwest of Middle-earth; homeland of the Hobbits."
+    },
+    {
+      "id": "orthanc",
+      "name": "Orthanc",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Isengard",
+      "description": "A tower in Isengard where Saruman imprisons Gandalf before his escape."
+    },
+    {
+      "id": "great_eagles",
+      "name": "Great Eagles",
+      "type": "Group",
+      "aliases": ["Eagles"],
+      "faction": "Independent / Free Peoples",
+      "description": "Giant eagles that occasionally aid the Free Peoples; they help Gandalf escape from Orthanc."
+    },
+
+    {
+      "id": "saruman",
+      "name": "Saruman",
+      "type": "Character",
+      "race": "Maia (Wizard / Istari)",
+      "aliases": ["Saruman the White"],
+      "faction": "Isengard",
+      "description": "A wizard who betrays the White Council and seeks power for himself."
+    },
+    {
+      "id": "fellowship",
+      "name": "Fellowship of the Ring",
+      "type": "Group",
+      "aliases": ["The Nine Walkers"],
+      "faction": "Free Peoples",
+      "description": "A group formed to help carry the One Ring to Mordor and destroy it."
+    },
+    {
+      "id": "rohan",
+      "name": "Rohan",
+      "type": "Kingdom",
+      "aliases": [],
+      "faction": "Free Peoples",
+      "description": "A kingdom of Men known for its horses and riders; capital is Edoras."
+    },
+    {
+      "id": "mordor",
+      "name": "Mordor",
+      "type": "Location",
+      "aliases": [],
+      "faction": "Mordor",
+      "description": "The dark realm of Sauron where Mount Doom lies."
+    }
+  ]
+}
