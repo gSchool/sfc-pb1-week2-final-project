@@ -18,7 +18,7 @@ def display_menu():
    ╚══▀▀═╝╚═╝╚═════╝ ╚═╝╚══════╝
 """)
 
-    print("  The perfect python quiz for nerds")
+    print("    The Perfect Python Quiz for NERDS")
     print("=" * 65)
 
     print("\nChoose your challenge:\n")
@@ -29,6 +29,8 @@ def display_menu():
     print()
     print("  help  - Show menu")
     print("  quit  - Exit the quiz")
+
+    print("\n" + "=" * 65)
 
     print("\n" + "=" * 65)
 
