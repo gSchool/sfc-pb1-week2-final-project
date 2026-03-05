@@ -11,6 +11,28 @@
     "blacksmith_anor_londo": "Giant Blacksmith",
     "blacksmith_undead_parish": "Andre of Astora"
   },
+  "quiz_facts": [
+    {
+      "key": "primary_antagonist",
+      "prompt": "Who is the primary antagonist?",
+      "wrong_pool": "names"
+    },
+    {
+      "key": "firelink_shrine_location",
+      "prompt": "What is the main hub location?",
+      "wrong_pool": "names"
+    },
+    {
+      "key": "blacksmith_undead_parish",
+      "prompt": "Who is the blacksmith in Undead Parish?",
+      "wrong_pool": "names"
+    },
+    {
+      "key": "blacksmith_anor_londo",
+      "prompt": "Who is the blacksmith in Anor Londo?",
+      "wrong_pool": "names"
+    }
+  ],
   "entries": [
     {
       "id": "chosen_undead",

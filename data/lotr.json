@@ -1,4 +1,5 @@
 {
+  
   "title": "Lord of the Rings",
   "facts": {
     "one_ring_destroyer": "Frodo Baggins",
@@ -7,6 +8,21 @@
     "aragorn_reforged_sword": "Andúril",
     "gandalf_orthanc_escape_help": "Great Eagles"
   },
+  
+  "quiz_facts": [
+  {
+    "key": "one_ring_destroyer",
+    "prompt": "Who destroyed the One Ring?",
+    "wrong_pool": "names"},
+  {
+    "key": "gandalf_horse",
+    "prompt": "What is the name of Gandalf's horse?",
+    "wrong_pool": "names"},
+  {
+    "key": "one_ring_destroy_location",
+    "prompt": "Where was the One Ring destroyed?",
+    "wrong_pool": "names"}
+  ],
   "entries": [
     {
       "id": "the_one_ring",
