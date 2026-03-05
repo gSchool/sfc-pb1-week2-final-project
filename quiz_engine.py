@@ -1,19 +1,37 @@
 import question_generator as qg
+import lore_loader as ll
+
 
 Number_Questions_Per_Quiz = 5
 
-def run_quiz(lore):
-    # call the generator from question_generator.py
-    questions = qg.generate_questions(lore, num_questions=NUMBER_QUESTIONS_PER_QUIZ)
+def run_quiz(lore_file_path):
+    lore = ll.load_lore(lore_file_path)
 
-    number_correct = 0
+    # If your generator uses quiz_facts, make sure it exists
+    lore.setdefault("quiz_facts", [])
 
+    questions = qg.generate_questions(lore, num_questions=Number_Questions_Per_Quiz)
+
+    score = 0
     for number, question in enumerate(questions, start=1):
         print(f"\nQuestion {number}:")
         if ask_question(question):
-            number_correct += 1
+            score += 1
 
-    print(f"\nYou got {number_correct} correct out of {len(questions)} questions!")
+    print(f"\nYou got {score} correct out of {len(questions)} questions!")
+
+# def run_quiz(lore):
+#     # call the generator from question_generator.py
+#     questions = qg.generate_questions(lore, num_questions=Number_Questions_Per_Quiz)
+
+#     number_correct = 0
+
+#     for number, question in enumerate(questions, start=1):
+#         print(f"\nQuestion {number}:")
+#         if ask_question(question):
+#             number_correct += 1
+
+#     print(f"\nYou got {number_correct} correct out of {len(questions)} questions!")
 
 
 # def run_quiz():
