@@ -18,7 +18,7 @@ def display_menu():
    ╚══▀▀═╝╚═╝╚═════╝ ╚═╝╚══════╝
 """)
 
-    print("       LORD OF THE RINGS & DARK SOULS QUIZ")
+    print("  The perfect python quiz for nerds")
     print("=" * 65)
 
     print("\nChoose your challenge:\n")
