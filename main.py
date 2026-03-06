@@ -7,6 +7,14 @@ from rich.rule import Rule
 from rich.prompt import Prompt
 from rich.theme import Theme
 
+try:
+    import pygame
+    SOUND_AVAILABLE = True
+except ImportError:
+    pygame = None
+    SOUND_AVAILABLE = False
+
+
 LOTR_FILE = "data/lotr.json"
 DARK_SOULS_FILE = "data/dark_souls.json"
 
@@ -34,6 +42,27 @@ ASCII_TITLE = r"""
   ╚██████╔╝╚██████╔╝██║███████╗
    ╚══▀▀═╝╚═╝╚═════╝ ╚═╝╚══════╝
 """.rstrip("\n")
+
+def start_music():
+    if not SOUND_AVAILABLE:
+        return
+
+    try:
+        print("Starting music...")
+        pygame.mixer.init()
+        pygame.mixer.music.load("data/music/Of-Legends-and-Fables-3_LoFi-1.ogg")
+        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.play(-1, fade_ms=2000)   # loop forever with 2-second fade in
+    except Exception as e:
+        console.print(f"[muted]Audio unavailable: {e}[/muted]")
+
+
+def stop_music():
+    if SOUND_AVAILABLE:
+        try:
+            pygame.mixer.music.fadeout(1000)   # 1-second fade out
+        except Exception:
+            pass
 
 
 def build_menu_panel() -> Panel:
@@ -140,7 +169,9 @@ def handle_choice(choice: str) -> bool:
 
 
 def main():
-  try:
+    start_music()
+
+    try:
         running = True
         while running:
             show_menu()
@@ -150,14 +181,17 @@ def main():
                     default="help"
                 ).strip().lower()
             except (KeyboardInterrupt, EOFError):
+                stop_music()
                 console.print("\n[gold]Thanks for playing.[/gold] [muted](goodbye!)[/muted]")
                 return
 
             running = handle_choice(choice)
 
-  except KeyboardInterrupt:
-        # If Ctrl+C happens anywhere else (like inside quiz_engine)
+    except KeyboardInterrupt:
+        stop_music()
         console.print("\n[gold]Thanks for playing.[/gold] [muted](goodbye!)[/muted]")
+
+
 
 
 if __name__ == "__main__":
