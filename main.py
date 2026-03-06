@@ -40,7 +40,7 @@ def build_menu_panel() -> Panel:
     title = Text()
     title.append(ASCII_TITLE + "\n", style="title")
     title.append("The Perfect Python Quiz for Fans\n", style="gold")
-    title.append("⛧  Touch the bonfire to begin...  ⛧\n", style="bonfire")
+    title.append("⛧   Created by Caleb and E  ⛧\n", style="bonfire")
 
     body = Text()
     body.append("\nChoose your challenge:\n\n", style="muted")
