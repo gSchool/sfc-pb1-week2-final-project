@@ -1,73 +1,197 @@
-"""
-Week 2 Final Project - Starter Code
-Console Application Template
+import quiz_engine
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
+from rich.align import Align
+from rich.rule import Rule
+from rich.prompt import Prompt
+from rich.theme import Theme
 
-This is a basic structure to get you started. Modify it for your project!
-"""
-
-def display_menu():
-    """
-    Show the main menu to the user.
-    Customize this for your application.
-    """
-    print("\n" + "="*40)
-    print("  My Console Application")
-    print("="*40)
-    print("1. Do something")
-    print("2. Do something else")
-    print("3. Show information")
-    print("help - Show this menu")
-    print("quit - Exit application")
-    print()
+try:
+    import pygame
+    SOUND_AVAILABLE = True
+except ImportError:
+    pygame = None
+    SOUND_AVAILABLE = False
 
 
-def handle_choice(choice):
-    """
-    Process the user's choice and call appropriate functions.
-    
-    Args:
-        choice (str): The user's input
-        
-    Returns:
-        bool: True to continue, False to exit
-    """
+LOTR_FILE = "data/lotr.json"
+DARK_SOULS_FILE = "data/dark_souls.json"
+
+theme = Theme(
+    {
+        "title": "bold cyan",
+        "gold": "bold yellow",
+        "bonfire": "bold red",
+        "good": "bold green",
+        "bad": "bold red",
+        "muted": "dim white",
+        "cmd": "bold yellow",
+        "accent": "bold magenta",
+    }
+)
+
+console = Console(theme=theme)
+
+
+ASCII_TITLE = r"""
+   ██████╗ ██╗   ██╗██╗███████╗
+  ██╔═══██╗██║   ██║██║╚══███╔╝
+  ██║   ██║██║   ██║██║  ███╔╝
+  ██║▄▄ ██║██║   ██║██║ ███╔╝
+  ╚██████╔╝╚██████╔╝██║███████╗
+   ╚══▀▀═╝╚═╝╚═════╝ ╚═╝╚══════╝
+""".rstrip("\n")
+
+def start_music():
+    if not SOUND_AVAILABLE:
+        return
+
+    try:
+        print("Starting music...")
+        pygame.mixer.init()
+        pygame.mixer.music.load("data/music/Of-Legends-and-Fables-3_LoFi-1.ogg")
+        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.play(-1, fade_ms=2000)   # loop forever with 2-second fade in
+    except Exception as e:
+        console.print(f"[muted]Audio unavailable: {e}[/muted]")
+
+
+def stop_music():
+    if SOUND_AVAILABLE:
+        try:
+            pygame.mixer.music.fadeout(1000)   # 1-second fade out
+        except Exception:
+            pass
+
+
+def build_menu_panel() -> Panel:
+    title = Text()
+    title.append(ASCII_TITLE + "\n", style="title")
+    title.append("The Perfect Python Quiz for Fans\n", style="gold")
+    title.append("⛧   Created by Caleb and E  ⛧\n", style="bonfire")
+
+    body = Text()
+    body.append("\nChoose your challenge:\n\n", style="muted")
+    body.append("  1) ⚔️  The One Ring Trial  — Lord of the Rings\n", style="good")
+    body.append("  2) 🔥  Kindle the Flame    — Dark Souls\n", style="bonfire")
+    body.append("  3) 📜  Lore Mode (stretch goal)\n", style="title")
+
+    body.append("\n", style="muted")
+    body.append("  help  - Show help\n", style="cmd")
+    body.append("  quit  - Exit the quiz\n", style="cmd")
+
+    content = Align.center(title + body)
+
+    return Panel(
+        content,
+        border_style="gold",
+        padding=(1, 2),
+        title="[gold]QUIZ MENU[/gold]",
+        subtitle="[muted]Type 1 / 2 / 3 / help / quit[/muted]",
+    )
+
+
+def show_menu():
+    console.clear()
+    console.print(build_menu_panel())
+    console.print(Rule(style="muted"))
+
+
+def show_help():
+    console.clear()
+    help_text = Text()
+    help_text.append("Help / Commands\n", style="title")
+    help_text.append("\n", style="muted")
+    help_text.append("• ", style="muted")
+    help_text.append("1", style="good")
+    help_text.append("  — Start Lord of the Rings quiz\n", style="muted")
+
+    help_text.append("• ", style="muted")
+    help_text.append("2", style="bonfire")
+    help_text.append("  — Start Dark Souls quiz\n", style="muted")
+
+    help_text.append("• ", style="muted")
+    help_text.append("3", style="title")
+    help_text.append("  — Lore Mode (coming soon)\n", style="muted")
+
+    help_text.append("• ", style="muted")
+    help_text.append("help", style="cmd")
+    help_text.append(" — Show this help page\n", style="muted")
+
+    help_text.append("• ", style="muted")
+    help_text.append("quit", style="cmd")
+    help_text.append(" — Exit the program\n", style="muted")
+
+    help_text.append("\nTips:\n", style="accent")
+    help_text.append("• If your quiz supports it, type 'quit' during a question to exit early.\n", style="muted")
+
+    console.print(
+        Panel(
+            help_text,
+            border_style="title",
+            padding=(1, 2),
+            title="[title]HELP[/title]",
+        )
+    )
+    console.print()
+    input("Press Enter to return to the bonfire...")
+
+
+def handle_choice(choice: str) -> bool:
     if choice == "1":
-        print("You chose option 1!")
-        # TODO: Call your function here
-        
-    elif choice == "2":
-        print("You chose option 2!")
-        # TODO: Call your function here
-        
-    elif choice == "3":
-        print("You chose option 3!")
-        # TODO: Call your function here
-        
-    elif choice == "help":
-        display_menu()
-        
-    elif choice == "quit":
-        print("Thanks for using the application. Goodbye!")
+        console.print("[good]⚔️  Summoning the Fellowship...[/good]")
+        quiz_engine.run_quiz(LOTR_FILE)
+        input("\nPress Enter to return to the bonfire...")
+        return True
+
+    if choice == "2":
+        console.print("[bonfire]🔥  Kindling the First Flame...[/bonfire]")
+        quiz_engine.run_quiz(DARK_SOULS_FILE)
+        input("\nPress Enter to return to the bonfire...")
+        return True
+
+    if choice == "3":
+        console.print("[title]📜 Lore Mode coming soon (stretch goal).[/title]")
+        input("\nPress Enter to return to the bonfire...")
+        return True
+
+    if choice == "help":
+        show_help()
+        return True
+
+    if choice == "quit":
+        console.print("[gold]Thanks for playing.[/gold] [muted]May your code compile on the first try.[/muted]")
         return False
-        
-    else:
-        print(f"'{choice}' is not a valid option. Type 'help' to see available commands.")
-    
+
+    console.print(f"[bad]'{choice}' is not a valid option.[/bad] [muted]Type[/muted] [cmd]help[/cmd] [muted]to see commands.[/muted]")
     return True
 
 
 def main():
-    """
-    Main application loop.
-    Displays menu, gets user input, processes choices.
-    """
-    print("Welcome to the Console Application!")
-    display_menu()
-    
-    running = True
-    while running:
-        choice = input("Enter your choice: ").strip().lower()
-        running = handle_choice(choice)
+    start_music()
+
+    try:
+        running = True
+        while running:
+            show_menu()
+            try:
+                choice = Prompt.ask(
+                    "[title]Enter your choice[/title] [muted](1/2/3/help/quit)[/muted]",
+                    default="help"
+                ).strip().lower()
+            except (KeyboardInterrupt, EOFError):
+                stop_music()
+                console.print("\n[gold]Thanks for playing.[/gold] [muted](goodbye!)[/muted]")
+                return
+
+            running = handle_choice(choice)
+
+    except KeyboardInterrupt:
+        stop_music()
+        console.print("\n[gold]Thanks for playing.[/gold] [muted](goodbye!)[/muted]")
+
+
 
 
 if __name__ == "__main__":
